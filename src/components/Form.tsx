@@ -9,6 +9,7 @@ const StyledForm = styled.form`
   border-radius: 10px;
   width: 850px;
   padding: 15px;
+  gap: 15px;
 `;
 function Form() {
   return (

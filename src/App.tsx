@@ -6,6 +6,7 @@ const AppStyled = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: hsl(217, 100%, 97%);
 `;
 
 function App() {

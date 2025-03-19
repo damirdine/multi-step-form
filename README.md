@@ -1,54 +1,28 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Formulaire multi-étapes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Bienvenue ! 👋
 
-Currently, two official plugins are available:
+Merci de participer à ce défi front-end de **Frontend Mentor**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Le défi
+Créez un formulaire multi-étapes en utilisant **React** et **Styled Components** pour que l'interface soit aussi proche que possible du design. Vous devez permettre aux utilisateurs de :
 
-## Expanding the ESLint configuration
+- Compléter chaque étape et revenir en arrière
+- Voir un résumé de leurs choix et valider leur commande
+- Visualiser un layout adapté à la taille de l'écran
+- Recevoir des messages de validation si un champ est manqué ou mal rempli
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Spécifications
+Les designs sont fournis dans le dossier `/design` (version mobile et desktop). Utilisez les ressources du dossier `/assets` pour les images et les polices nécessaires.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Étapes pour créer votre projet
+1. Initialisez votre projet avec React et Styled Components.
+2. Construisez la structure HTML et appliquez les styles de base.
+3. Divisez le formulaire en étapes, avec gestion de l’état et validation des entrées.
+4. Testez le projet sur différents appareils pour vérifier la réactivité.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Déploiement
+Pour déployer votre projet, vous pouvez utiliser des services comme [GitHub Pages](https://pages.github.com/), [Vercel](https://vercel.com/) ou [Netlify](https://www.netlify.com/).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Soumettre votre solution
+Une fois terminé, partagez votre solution sur la plateforme **Frontend Mentor** et dans la communauté pour obtenir des retours.

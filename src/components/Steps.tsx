@@ -1,5 +1,10 @@
+import styled from "styled-components";
 import Step from "./ui/Step";
 
+const StepStyled = styled.ul`
+  display: grid;
+  gap: 25px;
+`;
 function Steps() {
   const steps = [
     { number: 1, name: "Your info" },
@@ -8,13 +13,13 @@ function Steps() {
     { number: 4, name: "Summary" },
   ];
   return (
-    <ul>
+    <StepStyled>
       {steps.map((el) => (
         <li key={el.number}>
           <Step name={el.name.toUpperCase()} number={el.number} />
         </li>
       ))}
-    </ul>
+    </StepStyled>
   );
 }
 

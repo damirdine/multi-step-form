@@ -18,8 +18,6 @@
     src: url(./assets/fonts/Ubuntu-Bold.ttf);
 }
 
-
-
 :where(body) {
     /* Primary Colors */
     --marine-blue: hsl(213, 96%, 18%);

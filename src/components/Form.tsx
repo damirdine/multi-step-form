@@ -8,7 +8,7 @@ const StyledForm = styled.form`
   background-color: var(--white);
   border-radius: 10px;
   width: 850px;
-  padding: 15px;
+  padding: 18px;
   gap: 15px;
 `;
 

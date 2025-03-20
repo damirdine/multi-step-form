@@ -17,8 +17,7 @@ const NumberStyled = styled.span`
   width: 30px;
   height: 30px;
   margin-right: 15px;
-  font-family: "Ubuntu Medium";
-
+  
   &.is-active {
     background-color: var(--light-blue);
     color: var(--marine-blue)

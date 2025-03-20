@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const StyledInput = styled.div`
+    display: grid;
+    gap: 5px;
 `;
 
 type InputPropsType = {

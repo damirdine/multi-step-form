@@ -1,14 +1,26 @@
 import styled from "styled-components";
 import Input from "./ui/Input";
+import Button from "./ui/Button";
 
 const StyledFormContents = styled.div`
   padding: 68px;
 `;
-const H2 = styled.h2``;
-const P = styled.p``;
-const Button =  styled.button`
-    border: 1px solid red;
-`
+
+const H2 = styled.h2`
+  font-size: 32px;
+  font-weight: 700;
+`;
+
+const P = styled.p`
+  margin-bottom: 15px;
+`;
+
+const ButtonSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+`;
+
 function FormContents() {
   const step = {
     title: "Personnal info",
@@ -33,11 +45,17 @@ function FormContents() {
       <P>{step.description}</P>
 
       {step.inputs.map((el) => (
-        <Input key={el.label} label={el.label} type={el.type} placeholder={el.placeholder} />
+        <Input
+          key={el.label}
+          label={el.label}
+          type={el.type}
+          placeholder={el.placeholder}
+        />
       ))}
-      <div>
-        <Button>Next Step</Button>
-      </div>
+      <ButtonSection>
+        <Button>Go back</Button>
+        <Button primary={true}>Next Step</Button>
+      </ButtonSection>
     </StyledFormContents>
   );
 }

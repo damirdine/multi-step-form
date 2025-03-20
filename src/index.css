@@ -4,6 +4,10 @@
     list-style: none;
     font-family: 'Ubuntu Regular';
 }
+button {
+    all:unset;
+    cursor: pointer;
+}
 
 @font-face {
     font-family: "Ubuntu Regular";

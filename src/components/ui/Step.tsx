@@ -8,8 +8,8 @@ const NumberStyled = styled.span`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: solid 2px hsl(0, 0%, 100%);
-  color: white;
+  border: solid 2px ${`var(--pastel-blue)`};
+  color: var(--white);
   width: 30px;
   height: 30px;
   margin-right: 15px;

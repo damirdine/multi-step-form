@@ -10,7 +10,7 @@ function Steps() {
   return (
     <ul>
       {steps.map((el) => (
-        <li>
+        <li key={el.number}>
           <Step name={el.name.toUpperCase()} number={el.number} />
         </li>
       ))}

@@ -11,6 +11,7 @@ const StyledForm = styled.form`
   padding: 15px;
   gap: 15px;
 `;
+
 function Form() {
   return (
     <StyledForm>

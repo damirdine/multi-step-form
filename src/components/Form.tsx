@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import FormAside from "./FormAside";
+import FormContents from "./FormContents";
 
 const StyledForm = styled.form`
   display: grid;
@@ -16,7 +17,7 @@ function Form() {
   return (
     <StyledForm>
       <FormAside />
-      Form contents
+      <FormContents />
     </StyledForm>
   );
 }

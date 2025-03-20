@@ -14,7 +14,7 @@ const H2 = styled.h2`
 `;
 
 const P = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-size: 15px;
   color: var(--cool-gray);
 `;
@@ -27,6 +27,7 @@ const ButtonSection = styled.section`
 
 function FormContents() {
   const step = {
+    number: 1,
     title: "Personnal info",
     description: "Please provide your name, email address, and phone number.",
     inputs: [

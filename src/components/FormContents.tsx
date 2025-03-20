@@ -3,16 +3,20 @@ import Input from "./ui/Input";
 import Button from "./ui/Button";
 
 const StyledFormContents = styled.div`
-  padding: 68px;
+  padding: 24px 64px;
 `;
 
 const H2 = styled.h2`
   font-size: 32px;
   font-weight: 700;
+  color: var(--marine-blue);
+  margin-bottom: 8px;
 `;
 
 const P = styled.p`
   margin-bottom: 15px;
+  font-size: 15px;
+  color: var(--cool-gray);
 `;
 
 const ButtonSection = styled.section`

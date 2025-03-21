@@ -9,21 +9,26 @@ const PrimaryButton = styled.button`
 `;
 const ButtonNeutral = styled.button`
   padding: 12px;
-  color: var(--marine-blue);
+  color: var(--cool-gray);
   font-family: "Ubuntu Bold";
   background-color: var(--white);
+
+  &:hover {
+    color: var(--marine-blue);
+  }
 `;
 
 type ButtonProps = {
   primary?: boolean;
   children?: React.ReactNode;
+  onClick?: () => unknown;
 };
 
-function Button({ primary, children }: ButtonProps) {
+function Button({ primary, children, onClick}: ButtonProps) {
   if (primary) {
     return <PrimaryButton>{children}</PrimaryButton>;
   }
-  return <ButtonNeutral>{children}</ButtonNeutral>;
+  return <ButtonNeutral onClick={onClick}>{children}</ButtonNeutral>;
 }
 
 export default Button;

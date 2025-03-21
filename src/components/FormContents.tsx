@@ -58,7 +58,7 @@ function FormContents() {
         />
       ))}
       <ButtonSection>
-        <Button>Go back</Button>
+        {step.number === 1 || <Button>Go back</Button>}
         <Button primary={true}>Next Step</Button>
       </ButtonSection>
     </StyledFormContents>

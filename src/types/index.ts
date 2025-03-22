@@ -11,7 +11,7 @@ export type Option = {
 
 export type InputField = {
   type: "text" | "email" | "phone" | "radio" | "checkbox";
-  label?: string;
+  label: string;
   placeholder?: string;
   options?: Option[];
 };

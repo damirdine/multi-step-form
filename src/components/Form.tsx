@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import FormAside from "./FormAside";
 import FormContents from "./FormContents";
+import { useFormSteps } from "../context/useFormSteps";
 
 const StyledForm = styled.form`
   display: grid;
@@ -14,10 +15,14 @@ const StyledForm = styled.form`
 `;
 
 function Form() {
+  const data = useFormSteps();
+  if (!data?.currentStep) {
+    return <h1>Chargement...</h1>;
+  }
   return (
     <StyledForm>
       <FormAside />
-      <FormContents />
+      <FormContents step={data?.currentStep} />
     </StyledForm>
   );
 }

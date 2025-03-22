@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Form from "./components/Form";
+import { FormStepsContextProvider } from "./context/useFormSteps";
 
 const AppStyled = styled.main`
   display: flex;
@@ -11,9 +12,11 @@ const AppStyled = styled.main`
 
 function App() {
   return (
-    <AppStyled>
-      <Form />
-    </AppStyled>
+    <FormStepsContextProvider>
+      <AppStyled>
+        <Form />
+      </AppStyled>
+    </FormStepsContextProvider>
   );
 }
 

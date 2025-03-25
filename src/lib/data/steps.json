@@ -1,6 +1,7 @@
 [
   {
     "number": 1,
+    "slug": "Your info",
     "title": "Personnal info",
     "description": "Please provide your name, email address, and phone number.",
     "inputs": [
@@ -19,6 +20,7 @@
   },
   {
     "number": 2,
+    "slug":"Select plan",
     "title": "Select your plan",
     "description": "You have the option of monthly or yearly billing.",
     "inputs": [
@@ -57,6 +59,7 @@
   },
   {
     "number": 3,
+    "slug":"Add-ons",
     "title": "Pick add-ons",
     "description": "Add-ons help enhance your gaming experience",
     "inputs": [
@@ -94,6 +97,7 @@
   {
     "number": 4,
     "title": "Thank you!",
+    "slug":"Summary",
     "description": "Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com."
   }
 ]

@@ -46,7 +46,16 @@ function FormContents() {
         />
       ))}
       <ButtonSection>
-        {step.number === 1 || <Button>Go back</Button>}
+        {step.number === 1 || (
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              context.goToStep(step.number - 1);
+            }}
+          >
+            Go back
+          </Button>
+        )}
         <Button
           primary={true}
           onClick={(e) => {

@@ -6,6 +6,7 @@ const StepStyled = styled.ul`
   display: grid;
   gap: 25px;
 `;
+
 function Steps() {
   const context = useFormSteps()
   if(!context){

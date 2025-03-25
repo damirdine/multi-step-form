@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useFormSteps } from "../../context/useFormSteps";
 
 const StepStyled = styled.div`
   display: flex;
@@ -17,10 +18,10 @@ const NumberStyled = styled.span`
   width: 30px;
   height: 30px;
   margin-right: 15px;
-  
+
   &.is-active {
     background-color: var(--light-blue);
-    color: var(--marine-blue)
+    color: var(--marine-blue);
   }
 `;
 
@@ -33,9 +34,11 @@ type StepProps = {
 };
 
 export default function Step({ number, name }: StepProps) {
+  const context = useFormSteps();
+  const step = context?.currentStep;
   return (
     <StepStyled>
-      <NumberStyled className={number === 1 ? "is-active" : ""}>
+      <NumberStyled className={number === step?.number ? "is-active" : ""}>
         {number}
       </NumberStyled>
       <div>

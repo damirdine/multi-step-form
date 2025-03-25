@@ -37,7 +37,7 @@ function FormContents() {
       <H2>{step.title}</H2>
       <P>{step.description}</P>
 
-      {step.inputs.map((el) => (
+      {step?.inputs.map((el) => (
         <Input
           key={el.label}
           label={el.label}
@@ -47,7 +47,15 @@ function FormContents() {
       ))}
       <ButtonSection>
         {step.number === 1 || <Button>Go back</Button>}
-        <Button primary={true}>Next Step</Button>
+        <Button
+          primary={true}
+          onClick={(e) => {
+            e.preventDefault();
+            context.goToStep(step.number + 1);
+          }}
+        >
+          Next Step
+        </Button>
       </ButtonSection>
     </StyledFormContents>
   );

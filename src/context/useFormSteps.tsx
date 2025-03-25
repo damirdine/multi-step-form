@@ -6,6 +6,7 @@ type FormStepsContextType = {
   steps: FormStep[];
   currentStep: FormStep | null;
   setCurrentStep: (step: FormStep | null) => void;
+  goToStep: (num: number) => void;
 };
 
 const FormStepsContext = createContext<FormStepsContextType | null>(null);
@@ -25,12 +26,18 @@ export function FormStepsContextProvider({
       setCurrentStep(stepsData[0]);
     };
     fetchSteps();
-  }, [steps]);
+  }, []);
 
   const FormStepsContextValue: FormStepsContextType = {
     steps,
     currentStep,
     setCurrentStep,
+    goToStep(num) {
+      const newStep = steps?.find((el) => el?.number === num);
+      if (newStep) {
+        return setCurrentStep(newStep);
+      }
+    },
   };
 
   return (

@@ -21,14 +21,13 @@ const ButtonNeutral = styled.button`
 type ButtonProps = {
   primary?: boolean;
   children?: React.ReactNode;
-  onClick?: () => unknown;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-function Button({ primary, children, onClick}: ButtonProps) {
+function Button({ primary, children, ...props }: ButtonProps) {
   if (primary) {
-    return <PrimaryButton>{children}</PrimaryButton>;
+    return <PrimaryButton {...props}>{children}</PrimaryButton>;
   }
-  return <ButtonNeutral onClick={onClick}>{children}</ButtonNeutral>;
+  return <ButtonNeutral {...props}>{children}</ButtonNeutral>;
 }
 
 export default Button;

@@ -18,8 +18,8 @@ const StyledInput = styled.div`
     &:focus {
       border-color: var(--purplish-blue);
     }
-    &:invalid{
-        border-color: var(--strawberry-red);
+    &:invalid {
+      border-color: var(--strawberry-red);
     }
   }
 `;
@@ -28,9 +28,24 @@ type InputPropsType = {
   type: string;
   label: string;
   placeholder?: string;
+  options?: {
+    label: string;
+  }[];
 };
 
 function Input(props: InputPropsType) {
+  if (props.options) {
+    return (
+      <StyledInput>
+        <label htmlFor="">{props.label}</label>
+        <input type={props.type} placeholder={props.placeholder} />
+        {props?.options.map((el) => {
+          return <option value={el.label}>{el.label}</option>;
+        })}
+        <option value=""></option>
+      </StyledInput>
+    );
+  }
   return (
     <StyledInput>
       <label htmlFor="">{props.label}</label>

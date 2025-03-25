@@ -19,6 +19,7 @@ export type InputField = {
 export type FormStep = {
   number: number;
   title: string;
+  slug: string;
   description: string;
   inputs: InputField[];
 };

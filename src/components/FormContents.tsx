@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Input from "./ui/Input";
 import Button from "./ui/Button";
 import { useFormSteps } from "../context/useFormSteps";
-import { FormStep } from "../types";
 
 const StyledFormContents = styled.div`
   padding: 24px 64px;
@@ -27,25 +26,12 @@ const ButtonSection = styled.section`
   margin-top: 70px;
 `;
 
-function FormContents({step} : {step: FormStep}) {
-  // const step = {
-  //   number: 1,
-  //   title: "Personnal info",
-  //   description: "Please provide your name, email address, and phone number.",
-  //   inputs: [
-  //     { type: "text", label: "Name", placeholder: "e.g. Stephen King" },
-  //     {
-  //       type: "email",
-  //       label: "Email Adress",
-  //       placeholder: "e.g. stephenking@lorem.com",
-  //     },
-  //     {
-  //       type: "phone",
-  //       label: "Phone Number",
-  //       placeholder: "e.g. +1 234 567 890",
-  //     },
-  //   ],
-  // };
+function FormContents() {
+  const context = useFormSteps();
+  if (!context?.currentStep) {
+    return;
+  }
+  const step = context?.currentStep;
   return (
     <StyledFormContents>
       <H2>{step.title}</H2>

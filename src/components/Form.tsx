@@ -22,7 +22,7 @@ function Form() {
   return (
     <StyledForm>
       <FormAside />
-      <FormContents step={data?.currentStep} />
+      <FormContents />
     </StyledForm>
   );
 }

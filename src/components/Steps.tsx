@@ -15,7 +15,7 @@ function Steps() {
     <StepStyled>
       {context.steps.map((el) => (
         <li key={el.number}>
-          <Step name={el.title.toUpperCase()} number={el.number} />
+          <Step name={el.slug.toUpperCase()} number={el.number} />
         </li>
       ))}
     </StepStyled>

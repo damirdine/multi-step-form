@@ -37,7 +37,7 @@ function FormContents() {
       <H2>{step.title}</H2>
       <P>{step.description}</P>
 
-      {step?.inputs.map((el) => (
+      {step?.inputs?.map((el) => (
         <Input
           key={el.label}
           label={el.label}

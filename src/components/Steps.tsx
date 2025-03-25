@@ -9,7 +9,7 @@ const StepStyled = styled.ul`
 
 function Steps() {
   const context = useFormSteps()
-  if(!context){
+  if(!context?.steps){
     return <>Noon</>
   }
   return (

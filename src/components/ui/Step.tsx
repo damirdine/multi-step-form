@@ -37,7 +37,7 @@ export default function Step({ number, name }: StepProps) {
   const context = useFormSteps();
   const step = context?.currentStep;
   return (
-    <StepStyled>
+    <StepStyled key={step?.slug}>
       <NumberStyled className={number === step?.number ? "is-active" : ""}>
         {number}
       </NumberStyled>

@@ -23,3 +23,8 @@ export type FormStep = {
   description: string;
   inputs: InputField[];
 };
+export type FormEnding = {
+  title: string;
+  description: string;
+  image: string;
+};

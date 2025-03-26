@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import getFormSteps from "../lib/data";
-import { FormStep } from "../types";
+import getFormData from "../lib/data";
+import { FormEnding, FormStep } from "../types";
 
 type FormStepsContextType = {
+  ending: FormEnding | null;
   steps: FormStep[];
   currentStep: FormStep | null;
   setCurrentStep: (step: FormStep | null) => void;
@@ -18,17 +19,20 @@ export function FormStepsContextProvider({
 }) {
   const [steps, setSteps] = useState<FormStep[]>([]);
   const [currentStep, setCurrentStep] = useState<FormStep | null>(null);
+  const [ending, setEnding] = useState<FormEnding | null>(null);
 
   useEffect(() => {
     const fetchSteps = async () => {
-      const stepsData: FormStep[] = await getFormSteps();
+      const { steps: stepsData, ending } = await getFormData();
       setSteps(stepsData);
       setCurrentStep(stepsData[0]);
+      setEnding(ending);
     };
     fetchSteps();
   }, []);
 
   const FormStepsContextValue: FormStepsContextType = {
+    ending,
     steps,
     currentStep,
     setCurrentStep,

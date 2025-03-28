@@ -31,22 +31,25 @@
             {
               "label": "Arcade",
               "price": { "monthly": 9, "yearly": 90 },
-              "description": "2 months free"
+              "description": "2 months free",
+              "image": "https://raw.githubusercontent.com/damirdine/multi-step-form/refs/heads/main/src/assets/images/icon-arcade.svg"
             },
             {
               "label": "Advanced",
               "price": { "monthly": 12, "yearly": 120 },
-              "description": "2 months free"
+              "description": "2 months free",
+              "image": "https://raw.githubusercontent.com/damirdine/multi-step-form/refs/heads/main/src/assets/images/icon-advanced.svg"
             },
             {
               "label": "Pro",
               "price": { "monthly": 15, "yearly": 150 },
-              "description": "2 months free"
+              "description": "2 months free",
+              "image": "https://raw.githubusercontent.com/damirdine/multi-step-form/refs/heads/main/src/assets/images/icon-pro.svg"
             }
           ]
         },
         {
-          "type": "radio",
+          "type": "switch",
           "options": [
             {
               "label": "Monthly"

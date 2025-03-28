@@ -24,6 +24,11 @@ const StyledInput = styled.div`
   }
 `;
 
+const StyledRadioInput = styled.div`
+  padding: 15px;
+  background-color: red;
+`;
+
 type InputPropsType = {
   type: string;
   label: string;
@@ -34,17 +39,17 @@ type InputPropsType = {
 };
 
 function Input(props: InputPropsType) {
-  if (props.options) {
-    return (
-      <StyledInput>
-        <label htmlFor="">{props.label}</label>
-        <input type={props.type} placeholder={props.placeholder} />
-        {props?.options.map((el) => {
-          return <option value={el.label}>{el.label}</option>;
-        })}
-        <option value=""></option>
-      </StyledInput>
-    );
+  if (props?.options) {
+    if (props.type === "radio") {
+      return (
+        <StyledRadioInput>
+          {props.options.map((el) => (
+            <>{el.label}</>
+          ))}
+          <br />
+        </StyledRadioInput>
+      );
+    }
   }
   return (
     <StyledInput>

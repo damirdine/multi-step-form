@@ -37,14 +37,17 @@ function FormContents() {
       <H2>{step.title}</H2>
       <P>{step.description}</P>
 
-      {step?.inputs?.map((el) => (
-        <Input
-          key={el.label}
-          label={el.label}
-          type={el.type}
-          placeholder={el.placeholder}
-        />
-      ))}
+      {step?.inputs?.map((el) => {
+        return (
+          <Input
+            key={el.label}
+            label={el.label}
+            type={el.type}
+            placeholder={el.placeholder}
+            options={el.options}
+          />
+        );
+      })}
       <ButtonSection>
         {step.number === 1 || (
           <Button

@@ -27,6 +27,7 @@ const StyledInput = styled.div`
 const StyledRadioInput = styled.div`
   padding: 15px;
   background-color: red;
+  margin-bottom: 5px;
 `;
 
 type InputPropsType = {
@@ -35,16 +36,22 @@ type InputPropsType = {
   placeholder?: string;
   options?: {
     label: string;
+    price?: { monthly: number; yearly: number };
+    description?: string;
+    image?: string;
   }[];
 };
 
 function Input(props: InputPropsType) {
   if (props?.options) {
-    if (props.type === "radio") {
+    if (props.type === "radio" || props.type === "checkbox" ) {
       return (
-        <StyledRadioInput>
+        <StyledRadioInput >
           {props.options.map((el) => (
-            <>{el.label}</>
+            <div key={el.label}>
+              {el.label} - {el?.price?.monthly}
+              <img src={el.image} />
+            </div>
           ))}
           <br />
         </StyledRadioInput>

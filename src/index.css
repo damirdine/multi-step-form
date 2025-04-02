@@ -7,8 +7,11 @@
 button {
   cursor: pointer;
 }
-input,button {
+button {
   all: unset;
+}
+input {
+  /* appearance: none; */
 }
 
 @font-face {

@@ -28,3 +28,17 @@ export type FormEnding = {
   description: string;
   image: string;
 };
+
+export type InputOptions = {
+  label: string;
+  price?: { monthly: number; yearly: number };
+  description?: string;
+  image?: string;
+};
+
+export type InputPropsType = {
+  type: string;
+  label: string;
+  placeholder?: string;
+  options?: InputOptions [];
+};

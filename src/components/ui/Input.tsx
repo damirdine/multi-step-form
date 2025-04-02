@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { InputPropsType } from "../../types";
+import InputRadio from "./InputRadio";
 
 const StyledInput = styled.div`
   display: grid;
@@ -24,38 +26,13 @@ const StyledInput = styled.div`
   }
 `;
 
-const StyledRadioInput = styled.div`
-  padding: 15px;
-  background-color: red;
-  margin-bottom: 5px;
-`;
-
-type InputPropsType = {
-  type: string;
-  label: string;
-  placeholder?: string;
-  options?: {
-    label: string;
-    price?: { monthly: number; yearly: number };
-    description?: string;
-    image?: string;
-  }[];
-};
-
 function Input(props: InputPropsType) {
   if (props?.options) {
-    if (props.type === "radio" || props.type === "checkbox" ) {
-      return (
-        <StyledRadioInput >
-          {props.options.map((el) => (
-            <div key={el.label}>
-              {el.label} - {el?.price?.monthly}
-              <img src={el.image} />
-            </div>
-          ))}
-          <br />
-        </StyledRadioInput>
-      );
+    if (props.type === "radio") {
+      return <InputRadio name={props.label} options={props.options} />;
+    }
+    if (props.type === "switch") {
+      return <InputRadio name={props.label} options={props.options} />;
     }
   }
   return (

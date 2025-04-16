@@ -23,7 +23,7 @@ const P = styled.p`
 const ButtonSection = styled.section`
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 38px;
 `;
 
 function FormContents() {

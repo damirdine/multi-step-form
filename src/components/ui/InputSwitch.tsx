@@ -10,13 +10,13 @@ const StyledSwitch = styled.section`
   background-color: aliceblue;
   gap: 12px;
 
-  & .bold {
-    font-weight: bold;
+  & .desable {
+    color: var(--cool-gray);
   }
 
   label {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: bold;
   }
 
   input[type="checkbox"] {
@@ -56,7 +56,7 @@ function InputSwitch({ options, name }: InputSwitchProps) {
   } 
   return (
     <StyledSwitch>
-      <label htmlFor="on" className={`${switchValue === true && "bold"}`}>
+      <label htmlFor="on" className={`${switchValue !== true && "desable"}`}>
         {options[0].label}
       </label>
       <input
@@ -66,7 +66,7 @@ function InputSwitch({ options, name }: InputSwitchProps) {
         name={name}
         onClick={handleToggle}
       />
-      <label htmlFor="on" className={`${switchValue !== true && "bold"}`}>
+      <label htmlFor="on" className={`${switchValue === true && "desable"}`}>
         {options[1].label}
       </label>
     </StyledSwitch>

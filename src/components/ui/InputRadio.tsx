@@ -4,6 +4,7 @@ import { InputOptions } from "../../types";
 const StyleRadioInput = styled.section`
   display: flex;
   gap: 18px;
+  margin-bottom: 18px;
   
   label {
     display: flex;

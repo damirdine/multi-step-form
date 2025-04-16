@@ -23,6 +23,7 @@ const StyledInputCheckBox = styled.div`
         margin-bottom: 6px;
       }
       span {
+        font-size: 0.88rem;
         color: var(--cool-gray);
       }
       div {
@@ -30,6 +31,7 @@ const StyledInputCheckBox = styled.div`
       }
     }
     span {
+      font-size: 0.88rem;
       color: var(--purplish-blue);
     }
     &:hover {

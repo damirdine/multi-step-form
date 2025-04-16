@@ -5,7 +5,7 @@ import { useFormSteps } from "../context/useFormSteps";
 
 const StyledForm = styled.form`
   display: grid;
-  grid: auto-flow / 1fr 2fr;
+  grid: auto-flow / 250px 2fr;
   height: 500px;
   background-color: var(--white);
   border-radius: 10px;

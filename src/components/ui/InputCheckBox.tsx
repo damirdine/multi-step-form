@@ -12,6 +12,7 @@ const StyledInputCheckBox = styled.div`
     padding: 18px;
     border: 1px solid var(--light-gray);
     border-radius: 6px;
+    cursor: pointer;
     div {
       display: flex;
       input {

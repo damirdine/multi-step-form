@@ -5,11 +5,40 @@ const StyledInputCheckBox = styled.div`
   display: grid;
   gap: 15px;
 
-  input {
-    background-color: red;
-  }
-  div {
+  label {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid var(--light-gray);
+    border-radius: 6px;
+    div {
+      display: flex;
+      input {
+        width: 18px;
+        margin-right: 18px;
+      }
+      p {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      span {
+        color: var(--cool-gray);
+      }
+      div {
+        display: grid;
+      }
+    }
+    span {
+      color: var(--purplish-blue);
+    }
+    &:hover {
+      border-color: var(--purplish-blue);
+    }
+    &:has(input:checked) {
+      background-color: var(--magnolia);
+      border-color: var(--purplish-blue);
+    }
   }
 `;
 type InputCheckBoxProps = { options: InputOptions[]; name: string };
@@ -17,15 +46,17 @@ type InputCheckBoxProps = { options: InputOptions[]; name: string };
 function InputCheckBox(props: InputCheckBoxProps) {
   return (
     <StyledInputCheckBox>
-      {props.name}
-      <br />
       {props.options.map((el) => (
-        <div>
-          <label htmlFor={el.label}>
+        <label htmlFor={el.label}>
+          <div>
             <input type="checkbox" name={props.name} id={el.label} />
-            {el.label}
-          </label>
-        </div>
+            <div>
+              <p>{el.label}</p>
+              <span>{el.description}</span>
+            </div>
+          </div>
+          <span>${el.price?.monthly}/mo</span>
+        </label>
       ))}
     </StyledInputCheckBox>
   );

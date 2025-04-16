@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { InputPropsType } from "../../types";
 import InputRadio from "./InputRadio";
 import InputCheckBox from "./InputCheckBox";
+import InputSwitch from "./InputSwitch";
 
 const StyledInput = styled.div`
   display: grid;
@@ -33,7 +34,7 @@ function Input(props: InputPropsType) {
       return <InputRadio name={props.label} options={props.options} />;
     }
     if (props.type === "switch") {
-      return <InputRadio name={props.label} options={props.options} />;
+      return <InputSwitch name={props.label} options={props.options} />;
     }
     if(props.type === "checkbox"){
       return <InputCheckBox name={props.label} options={props.options}/>

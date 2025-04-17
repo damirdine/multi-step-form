@@ -4,6 +4,7 @@ import { useFormSteps } from "../context/useFormSteps";
 import { ReactNode } from "react";
 import Summary from "./Summary";
 import ButtonSection from "./ButtonSection";
+import Ending from "./Ending";
 
 const StyledFormContents = styled.div`
   padding: 24px 64px;
@@ -28,6 +29,9 @@ function FormContents() {
     return;
   }
   const step = context?.currentStep;
+  if (step.slug === "ending") {
+    return <Ending />;
+  }
   let content: ReactNode[] | ReactNode = <>Hello</>;
   if (step.slug.toLowerCase() === "summary") {
     content = <Summary />;

@@ -14,7 +14,7 @@ function Steps() {
   }
   return (
     <StepStyled>
-      {context.steps.map((el) => (
+      {context.steps.slice(0,4).map((el) => (
         <li key={el.number}>
           <Step name={el.slug.toUpperCase()} number={el.number} />
         </li>

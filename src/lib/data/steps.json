@@ -116,7 +116,7 @@
   ],
   "ending": {
     "images": "https://raw.githubusercontent.com/damirdine/multi-step-form/refs/heads/main/src/assets/images/icon-thank-you.svg",
-    "title": "Thank you",
+    "title": "Thank you!",
     "description": "Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com."
   }
 }

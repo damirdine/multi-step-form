@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Input from "./ui/Input";
-import Button from "./ui/Button";
 import { useFormSteps } from "../context/useFormSteps";
+import { ReactNode } from "react";
+import Summary from "./Summary";
+import ButtonSection from "./ButtonSection";
 
 const StyledFormContents = styled.div`
   padding: 24px 64px;
@@ -20,55 +22,35 @@ const P = styled.p`
   color: var(--cool-gray);
 `;
 
-const ButtonSection = styled.section`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 38px;
-`;
-
 function FormContents() {
   const context = useFormSteps();
   if (!context?.currentStep) {
     return;
   }
   const step = context?.currentStep;
+  let content: ReactNode[] | ReactNode = <>Hello</>;
+  if (step.slug.toLowerCase() === "summary") {
+    content = <Summary />;
+  }
+  if (step?.inputs?.length > 0) {
+    content = step?.inputs?.map((el) => {
+      return (
+        <Input
+          key={el.label}
+          label={el.label}
+          type={el.type}
+          placeholder={el.placeholder}
+          options={el.options}
+        />
+      );
+    });
+  }
   return (
     <StyledFormContents>
       <H2>{step.title}</H2>
       <P>{step.description}</P>
-
-      {step?.inputs?.map((el) => {
-        return (
-          <Input
-            key={el.label}
-            label={el.label}
-            type={el.type}
-            placeholder={el.placeholder}
-            options={el.options}
-          />
-        );
-      })}
-      <ButtonSection>
-        {step.number === 1 || (
-          <Button
-            onClick={(e) => {
-              e.preventDefault();
-              context.goToStep(step.number - 1);
-            }}
-          >
-            Go back
-          </Button>
-        )}
-        <Button
-          primary={true}
-          onClick={(e) => {
-            e.preventDefault();
-            context.goToStep(step.number + 1);
-          }}
-        >
-          Next Step
-        </Button>
-      </ButtonSection>
+      {content}
+      <ButtonSection />
     </StyledFormContents>
   );
 }

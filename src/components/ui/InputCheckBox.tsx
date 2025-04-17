@@ -50,7 +50,7 @@ function InputCheckBox(props: InputCheckBoxProps) {
   return (
     <StyledInputCheckBox>
       {props.options.map((el) => (
-        <label htmlFor={el.label}>
+        <label htmlFor={el.label} key={el.label}>
           <div>
             <input type="checkbox" name={props.name} id={el.label} />
             <div>

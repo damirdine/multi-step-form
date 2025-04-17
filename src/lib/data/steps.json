@@ -106,6 +106,12 @@
       "title": "Finishing up",
       "slug": "Summary",
       "description": "Double-check everything looks OK before confirming."
+    },
+    {
+      "number": 5,
+      "title": "Thank you",
+      "slug": "ending",
+      "description": "Thanks For confirming your subscription! We hope you have\n fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com."
     }
   ],
   "ending": {
